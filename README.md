@@ -1,0 +1,2 @@
+# nvim
+Minimalistic Neovim config
