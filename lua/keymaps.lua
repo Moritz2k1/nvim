@@ -28,22 +28,22 @@ keymap("n", "<C-l>", "<C-w>l")
 -- Oil
 keymap("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
 keymap("n", "<C-->", function()
-  vim.cmd("vsplit | wincmd l")
-  require("oil").open()
+	vim.cmd("vsplit | wincmd l")
+	require("oil").open()
 end)
 
 --Telescope
 local builtin = require("telescope.builtin")
 -- Setup which-key
 wk.add({
-  { "<leader>f",  group = "Telescope" },
-  { "<leader>ff", builtin.find_files,        desc = "Find files" },
-  { "<leader>fg", builtin.live_grep,         desc = "Live grep" },
-  { "<leader>fr", builtin.oldfiles,          desc = "Recent files" },
-  { "<leader>fb", builtin.buffers,           desc = "Search buffers" },
-  { "<leader>fk", builtin.keymaps,           desc = "Keymappings" },
-  { "<leader>fq", builtin.quickfix,          desc = "Quickfix list" },
-  { "<leader>fu", "<Cmd>Telescope undo<CR>", desc = "Undotree" },
+	{ "<leader>f", group = "Telescope" },
+	{ "<leader>ff", builtin.find_files, desc = "Find files" },
+	{ "<leader>fg", builtin.live_grep, desc = "Live grep" },
+	{ "<leader>fr", builtin.oldfiles, desc = "Recent files" },
+	{ "<leader>fb", builtin.buffers, desc = "Search buffers" },
+	{ "<leader>fk", builtin.keymaps, desc = "Keymappings" },
+	{ "<leader>fq", builtin.quickfix, desc = "Quickfix list" },
+	{ "<leader>fu", "<Cmd>Telescope undo<CR>", desc = "Undotree" },
 })
 
 -- Buffers
@@ -73,15 +73,22 @@ keymap("n", "<A-d>", "<Cmd>BufferCloseAllButCurrentOrPinned<CR>", opts)
 -- Windows
 local smart_splits = require("smart-splits")
 wk.add({
-  { "<leader>w",  group = "Windows" },
-  { "<leader>wq", ":close<CR>",                desc = "Close window" },
-  { "<leader>we", ":vsplit<CR>",               desc = "Split vertically" },
-  { "<leader>wd", ":split<CR>",                desc = "Split horizontally" },
-  { "<leader>wh", smart_splits.swap_buf_left,  desc = "Swap left" },
-  { "<leader>wj", smart_splits.swap_buf_down,  desc = "Swap down" },
-  { "<leader>wk", smart_splits.swap_buf_up,    desc = "Swap up" },
-  { "<leader>wl", smart_splits.swap_buf_right, desc = "Swap right" },
+	{ "<leader>w", group = "Windows" },
+	{ "<leader>wq", ":close<CR>", desc = "Close window" },
+	{ "<leader>we", ":vsplit<CR>", desc = "Split vertically" },
+	{ "<leader>wd", ":split<CR>", desc = "Split horizontally" },
+	{ "<leader>wh", smart_splits.swap_buf_left, desc = "Swap left" },
+	{ "<leader>wj", smart_splits.swap_buf_down, desc = "Swap down" },
+	{ "<leader>wk", smart_splits.swap_buf_up, desc = "Swap up" },
+	{ "<leader>wl", smart_splits.swap_buf_right, desc = "Swap right" },
 })
+
+-- Tmux Navigator
+keymap("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>")
+keymap("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>")
+keymap("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>")
+keymap("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>")
+keymap("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<cr>")
 
 -- Resize window
 keymap("n", "<A-h>", require("smart-splits").resize_left)
@@ -94,40 +101,40 @@ local lspbuf = require("vim.lsp.buf")
 keymap("n", "K", lspbuf.hover)
 -- Setup which-key
 wk.add({
-  { "<leader>g",  group = "LSP" },
-  { "<leader>gd", lspbuf.definition,  desc = "Definition" },
-  { "<leader>gr", lspbuf.references,  desc = "References" },
-  { "<leader>gc", lspbuf.code_action, desc = "Code action" },
-  { "<leader>gf", lspbuf.format,      desc = "Format" },
-  { "<leader>gn", lspbuf.rename,      desc = "Rename" },
+	{ "<leader>g", group = "LSP" },
+	{ "<leader>gd", lspbuf.definition, desc = "Definition" },
+	{ "<leader>gr", lspbuf.references, desc = "References" },
+	{ "<leader>gc", lspbuf.code_action, desc = "Code action" },
+	{ "<leader>gf", lspbuf.format, desc = "Format" },
+	{ "<leader>gn", lspbuf.rename, desc = "Rename" },
 })
 
 -- Debugger
 keymap("n", "<F5>", function()
-  require("dap").continue()
+	require("dap").continue()
 end)
 keymap("n", "<F12>", function()
-  require("dap").step_over()
+	require("dap").step_over()
 end)
 keymap("n", "<F11>", function()
-  require("dap").step_into()
+	require("dap").step_into()
 end)
 keymap("n", "<F12>", function()
-  require("dap").step_out()
+	require("dap").step_out()
 end)
 keymap("n", "<leader>b", function()
-  require("dap").toggle_breakpoint()
+	require("dap").toggle_breakpoint()
 end, { desc = "Toggle breakpoint" })
 
 -- Compiler
 keymap("n", "<F6>", ":wa <cmd>CompilerOpen<cr>", { noremap = true, silent = true }) -- Open compiler
 -- Redo last selected option
 keymap(
-  "n",
-  "<F8>",
-  "<cmd>CompilerStop<cr>" -- (Optional, to dispose all tasks before redo)
-  .. "<cmd>CompilerRedo<cr>",
-  { noremap = true, silent = true }
+	"n",
+	"<F8>",
+	"<cmd>CompilerStop<cr>" -- (Optional, to dispose all tasks before redo)
+		.. "<cmd>CompilerRedo<cr>",
+	{ noremap = true, silent = true }
 )
 -- Toggle compiler results
 keymap("n", "<F7>", "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
@@ -140,23 +147,23 @@ keymap("n", "<leader>a", "<cmd>AerialToggle<CR>")
 
 -- Flash
 keymap({ "n", "x", "o" }, "s", function()
-  require("flash").jump()
+	require("flash").jump()
 end, { desc = "Flash" })
 
 keymap({ "n", "x", "o" }, "S", function()
-  require("flash").treesitter()
+	require("flash").treesitter()
 end, { desc = "Flash Treesitter" })
 
 keymap({ "o" }, "r", function()
-  require("flash").remote()
+	require("flash").remote()
 end, { desc = "Remote Flash" })
 
 keymap({ "o", "x" }, "R", function()
-  require("flash").treesitter_search()
+	require("flash").treesitter_search()
 end, { desc = "Treesitter Search" })
 
 -- Lazygit
 wk.add({
-  { "<leader>l",  group = "LazyGit" },
-  { "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
+	{ "<leader>l", group = "LazyGit" },
+	{ "<leader>lg", "<cmd>LazyGit<cr>", desc = "LazyGit" },
 })
