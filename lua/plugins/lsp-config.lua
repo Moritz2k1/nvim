@@ -9,7 +9,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     config = function()
       require("mason-lspconfig").setup({
-        ensure_installed = { "lua_ls", "jedi_language_server", "ruff_lsp"},
+        ensure_installed = { "lua_ls", "jedi_language_server", "ruff"},
       })
     end,
   },
@@ -29,7 +29,7 @@ return {
         capabilities = capabilities,
       })
 
-      lspconfig.ruff_lsp.setup({
+      lspconfig.ruff.setup({
         capabilities = capabilities,
       })
     end,
