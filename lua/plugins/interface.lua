@@ -29,14 +29,6 @@ return {
 		event = "VeryLazy",
 		opts = {},
 	},
-	-- Mini.ai
-	{
-		"echasnovski/mini.ai",
-		version = false,
-		config = function()
-			require("mini.ai").setup()
-		end,
-	},
 	-- Neoscroll
 	{
 		"karb94/neoscroll.nvim",
