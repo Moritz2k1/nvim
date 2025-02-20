@@ -1,12 +1,11 @@
 return {
-	-- Tokyo Night Theme
+	-- Get Theme from Pywal16
 	{
-		"folke/tokyonight.nvim",
-		lazy = false,
-		priority = 1000,
-		opts = {},
+		"uZer/pywal16.nvim",
+		lazy = false, -- Load the colorscheme immediately
+		priority = 1000, -- Ensure it loads first
 		config = function()
-			vim.cmd.colorscheme("tokyonight-storm")
+			vim.cmd.colorscheme("pywal16")
 		end,
 	},
 	-- Lualine
@@ -15,11 +14,11 @@ return {
 		dependencies = { "nvim-tree/nvim-web-devicons" },
 		config = function()
 			require("lualine").setup({
-				options = { theme = "palenight" },
+				options = { theme = "pywal16-nvim" },
 			})
 		end,
 	},
-  -- Dashboard
+	-- Dashboard
 	{
 		"goolord/alpha-nvim",
 		dependencies = {
