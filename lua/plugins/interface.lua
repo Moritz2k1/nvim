@@ -28,6 +28,21 @@ return {
 		"folke/flash.nvim",
 		event = "VeryLazy",
 		opts = {},
+
+		-- Adjust highlighting
+		config = function()
+			-- Visual mode
+			Set_highlight("Visual", { fg = Colors.background, bg = Colors.color1 })
+
+			-- Searching
+			Set_highlight("IncSearch", { fg = Colors.background, bg = Colors.color1 })
+			Set_highlight("Search", { fg = Colors.background, bg = Colors.color3 })
+
+			-- Flash highlighting
+			Set_highlight("FlashLabel", { fg = Colors.background, bg = Colors.color3, bold = true })
+			Set_highlight("FlashMatch", { fg = Colors.background, bg = Colors.color2 })
+			Set_highlight("FlashCurrent", { fg = Colors.background, bg = Colors.color1, bold = true })
+		end,
 	},
 	-- Neoscroll
 	{
@@ -41,21 +56,13 @@ return {
 		"folke/noice.nvim",
 		event = "VeryLazy",
 		config = function()
-
-			local pywal16_core = require("pywal16.core")
-			local colors = pywal16_core.get_colors()
-
-			local function set_highlight(group, opts)
-				vim.api.nvim_set_hl(0, group, opts)
-			end
-
-			set_highlight("NoiceCmdlinePopupBorder", { fg = colors.color1 })
-			set_highlight("NoiceCmdlineIcon", { fg = colors.color1 })
-			set_highlight("NoiceCmdlinePopup", { bg = colors.color0 })
-			set_highlight("NoiceCmdline", { fg = colors.foreground, bg = colors.color0 })
-			set_highlight("NoicePopupBorder", { fg = colors.color1 })
-			set_highlight("NoicePopupmenu", { bg = colors.color0 })
-			set_highlight("NoiceVirtualText", { fg = colors.color1 })
+			Set_highlight("NoiceCmdlinePopupBorder", { fg = Colors.color1 })
+			Set_highlight("NoiceCmdlineIcon", { fg = Colors.color1 })
+			Set_highlight("NoiceCmdlinePopup", { bg = Colors.color0 })
+			Set_highlight("NoiceCmdline", { fg = Colors.foreground, bg = Colors.color0 })
+			Set_highlight("NoicePopupBorder", { fg = Colors.color1 })
+			Set_highlight("NoicePopupmenu", { bg = Colors.color0 })
+			Set_highlight("NoiceVirtualText", { fg = Colors.color1 })
 
 			require("noice").setup({
 				views = {
@@ -96,31 +103,23 @@ return {
 	{
 		"rcarriga/nvim-notify",
 		config = function()
-
-			local pywal16_core = require("pywal16.core")
-			local colors = pywal16_core.get_colors()
-
-			local function set_highlight(group, properties)
-				vim.api.nvim_set_hl(0, group, properties)
-			end
-
 			local notify_highlights = {
-				ERROR = { fg = colors.color1, bg = colors.background },
-				WARN = { fg = colors.color3, bg = colors.background },
-				INFO = { fg = colors.color3, bg = colors.background },
-				DEBUG = { fg = colors.color4, bg = colors.background },
-				TRACE = { fg = colors.color5, bg = colors.background },
+				ERROR = { fg = Colors.color1, bg = Colors.background },
+				WARN = { fg = Colors.color3, bg = Colors.background },
+				INFO = { fg = Colors.color3, bg = Colors.background },
+				DEBUG = { fg = Colors.color4, bg = Colors.background },
+				TRACE = { fg = Colors.color5, bg = Colors.background },
 			}
 
 			for level, hl in pairs(notify_highlights) do
-				set_highlight("Notify" .. level .. "Border", { fg = hl.fg })
-				set_highlight("Notify" .. level .. "Icon", { fg = hl.fg })
-				set_highlight("Notify" .. level .. "Title", { fg = hl.fg })
-				set_highlight("Notify" .. level .. "Body", { fg = colors.foreground, bg = hl.bg })
+				Set_highlight("Notify" .. level .. "Border", { fg = hl.fg })
+				Set_highlight("Notify" .. level .. "Icon", { fg = hl.fg })
+				Set_highlight("Notify" .. level .. "Title", { fg = hl.fg })
+				Set_highlight("Notify" .. level .. "Body", { fg = Colors.foreground, bg = hl.bg })
 			end
 
 			require("notify").setup({
-				background_colour = colors.background,
+				background_colour = Colors.background,
 				timeout = 2000,
 				render = "minimal",
 			})

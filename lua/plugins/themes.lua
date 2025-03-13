@@ -6,6 +6,14 @@ return {
 		priority = 1000, -- Ensure it loads first
 		config = function()
 			vim.cmd.colorscheme("pywal16")
+
+			_G.Pywal16_core = require("pywal16.core")
+			_G.Colors = Pywal16_core.get_colors()
+
+      -- Adjust highlighting
+			function _G.Set_highlight(group, opts)
+				vim.api.nvim_set_hl(0, group, opts)
+			end
 		end,
 	},
 	-- Lualine
