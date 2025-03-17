@@ -5,14 +5,14 @@
 * Telescope Fuzzy Finder
 * Code Completion
 * Compiler
-* Python Debugger
+* Python and C/C++ Debugger
 * Lazygit Integration
 * Tmux Navigator
+* Pywal Theme
 
 ## Quickstart
 ```
 sudo pacman -S neovim
-curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
 git clone https://github.com/Moritz2k1/nvim.git ~/.config/
 ```
 
