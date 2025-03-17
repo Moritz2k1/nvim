@@ -13,7 +13,7 @@
 ## Quickstart
 ```
 sudo pacman -S neovim
-git clone https://github.com/Moritz2k1/nvim.git ~/.config/
+git clone https://github.com/Moritz2k1/nvim.git ~/.config/nvim/
 ```
 
 ## Post-Install
