@@ -147,8 +147,4 @@ return {
 			})
 		end,
 	},
-	-- Tmux Navigator
-	{
-		"christoomey/vim-tmux-navigator",
-	},
 }

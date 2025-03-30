@@ -83,13 +83,6 @@ wk.add({
 	{ "<leader>wl", smart_splits.swap_buf_right, desc = "Swap right" },
 })
 
--- Tmux Navigator
-keymap("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>")
-keymap("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>")
-keymap("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>")
-keymap("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>")
-keymap("n", "<C-\\>", "<cmd>TmuxNavigatePrevious<cr>")
-
 -- Resize window
 keymap("n", "<A-h>", require("smart-splits").resize_left)
 keymap("n", "<A-j>", require("smart-splits").resize_down)
@@ -138,12 +131,6 @@ keymap(
 )
 -- Toggle compiler results
 keymap("n", "<F7>", "<cmd>CompilerToggleResults<cr>", { noremap = true, silent = true })
-
--- Aerial
--- Jump forwards/backwards with '{' and '}'
-keymap("n", "{", "<cmd>AerialPrev<CR>")
-keymap("n", "}", "<cmd>AerialNext<CR>")
-keymap("n", "<leader>a", "<cmd>AerialToggle<CR>")
 
 -- Flash
 keymap({ "n", "x", "o" }, "s", function()
