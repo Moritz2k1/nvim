@@ -10,3 +10,6 @@ vim.g.maplocalleader = "\\"
 -- Enable line/relative numbers by default
 vim.opt.number = true
 vim.opt.relativenumber = true
+
+-- Disable depracated messages
+vim.deprecate = function() end
