@@ -99,4 +99,25 @@ return {
 			})
 		end,
 	},
+	-- Toggleterm
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		event = "VeryLazy",
+		opts = {
+			open_mapping = [[<C-t>]],
+			direction = "float",
+			float_opts = {
+				border = "curved",
+			},
+			start_in_insert = true,
+			insert_mappings = true,
+			terminal_mappings = true,
+			persist_mode = true,
+			close_on_exit = true,
+		},
+		config = function(_, opts)
+			require("toggleterm").setup(opts)
+		end,
+	},
 }
