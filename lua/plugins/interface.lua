@@ -28,21 +28,6 @@ return {
 		"folke/flash.nvim",
 		event = "VeryLazy",
 		opts = {},
-
-		-- Adjust highlighting
-		config = function()
-			-- Visual mode
-			Set_highlight("Visual", { fg = Colors.background, bg = Colors.color1 })
-
-			-- Searching
-			Set_highlight("IncSearch", { fg = Colors.background, bg = Colors.color1 })
-			Set_highlight("Search", { fg = Colors.background, bg = Colors.color3 })
-
-			-- Flash highlighting
-			Set_highlight("FlashLabel", { fg = Colors.background, bg = Colors.color3, bold = true })
-			Set_highlight("FlashMatch", { fg = Colors.background, bg = Colors.color2 })
-			Set_highlight("FlashCurrent", { fg = Colors.background, bg = Colors.color1, bold = true })
-		end,
 	},
 	-- Neoscroll
 	{
@@ -55,79 +40,46 @@ return {
 	{
 		"folke/noice.nvim",
 		event = "VeryLazy",
-		config = function()
-			Set_highlight("NoiceCmdlinePopupBorder", { fg = Colors.color1 })
-			Set_highlight("NoiceCmdlineIcon", { fg = Colors.color1 })
-			Set_highlight("NoiceCmdlinePopup", { bg = Colors.color0 })
-			Set_highlight("NoiceCmdline", { fg = Colors.foreground, bg = Colors.color0 })
-			Set_highlight("NoicePopupBorder", { fg = Colors.color1 })
-			Set_highlight("NoicePopupmenu", { bg = Colors.color0 })
-			Set_highlight("NoiceVirtualText", { fg = Colors.color1 })
-
-			require("noice").setup({
-				views = {
-					cmdline_popup = {
-						border = {
-							style = "rounded",
-							highlight = "NoiceCmdlinePopupBorder",
-						},
-						win_options = {
-							winblend = 10,
-							winhighlight = {
-								Normal = "NoiceCmdlinePopup",
-								FloatBorder = "NoiceCmdlinePopupBorder",
-							},
-						},
-					},
-					popupmenu = {
-						border = {
-							style = "rounded",
-							highlight = "NoicePopupBorder",
-						},
-						win_options = {
-							winblend = 10,
-							winhighlight = {
-								Normal = "NoicePopupmenu",
-								FloatBorder = "NoicePopupBorder",
-							},
-						},
-					},
+		opts = {
+			-- add any options here
+		},
+		require("noice").setup({
+			lsp = {
+				-- override markdown rendering so that **cmp** and other plugins use **Treesitter**
+				override = {
+					["vim.lsp.util.convert_input_to_markdown_lines"] = true,
+					["vim.lsp.util.stylize_markdown"] = true,
+					["cmp.entry.get_documentation"] = true, -- requires hrsh7th/nvim-cmp
 				},
-			})
-		end,
+			},
+			-- you can enable a preset for easier configuration
+			presets = {
+				long_message_to_split = true, -- long messages will be sent to a split
+				lsp_doc_border = false, -- add a border to hover docs and signature help
+			},
+		}),
 		dependencies = {
+			-- if you lazy-load any plugin below, make sure to add proper `module="..."` entries
 			"MunifTanjim/nui.nvim",
+			-- OPTIONAL:
+			--   `nvim-notify` is only needed, if you want to use the notification view.
+			--   If not available, we use `mini` as the fallback
+			"rcarriga/nvim-notify",
 		},
 	},
 	-- Notify
 	{
 		"rcarriga/nvim-notify",
 		config = function()
-			local notify_highlights = {
-				ERROR = { fg = Colors.color1, bg = Colors.background },
-				WARN = { fg = Colors.color3, bg = Colors.background },
-				INFO = { fg = Colors.color3, bg = Colors.background },
-				DEBUG = { fg = Colors.color4, bg = Colors.background },
-				TRACE = { fg = Colors.color5, bg = Colors.background },
-			}
+			require("telescope").load_extension("notify")
 
-			for level, hl in pairs(notify_highlights) do
-				Set_highlight("Notify" .. level .. "Border", { fg = hl.fg })
-				Set_highlight("Notify" .. level .. "Icon", { fg = hl.fg })
-				Set_highlight("Notify" .. level .. "Title", { fg = hl.fg })
-				Set_highlight("Notify" .. level .. "Body", { fg = Colors.foreground, bg = hl.bg })
-			end
-
-			require("notify").setup({
-				background_colour = Colors.background,
+			local config = require("notify")
+			config.setup({
 				timeout = 2000,
 				render = "minimal",
 			})
-
-			require("telescope").load_extension("notify")
 		end,
 	},
-
 	-- Smart Splits
 	{
 		"mrjones2014/smart-splits.nvim",
@@ -145,6 +97,27 @@ return {
 			require("nvim-surround").setup({
 				-- Configuration here, or leave empty to use defaults
 			})
+		end,
+	},
+	-- Toggleterm
+	{
+		"akinsho/toggleterm.nvim",
+		version = "*",
+		event = "VeryLazy",
+		opts = {
+			open_mapping = [[<C-t>]],
+			direction = "float",
+			float_opts = {
+				border = "curved",
+			},
+			start_in_insert = true,
+			insert_mappings = true,
+			terminal_mappings = true,
+			persist_mode = true,
+			close_on_exit = true,
+		},
+		config = function(_, opts)
+			require("toggleterm").setup(opts)
 		end,
 	},
 }

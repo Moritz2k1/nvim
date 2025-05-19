@@ -11,5 +11,5 @@ vim.g.maplocalleader = "\\"
 vim.opt.number = true
 vim.opt.relativenumber = true
 
--- Disable deprecated messages
+-- Disable depracated messages
 vim.deprecate = function() end
