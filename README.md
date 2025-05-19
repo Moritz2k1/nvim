@@ -11,12 +11,12 @@
 
 ## Quickstart
 ```
+brew install neovim
 https://github.com/Moritz2k1/nvim.git ~/.config/nvim/
-git checkout macos
 ```
 
 ## Post-Install
-### Make sure to run :checkhealth to resolve missing dependencies/issues depending on your distro and needs
+### Make sure to run :checkhealth to resolve missing dependencies/issues
 ### LSP's can be removed or added in the lsp_config.lua file
 
 ## Inspiration
