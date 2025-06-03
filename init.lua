@@ -12,7 +12,12 @@ vim.opt.rtp:prepend(lazypath)
 require("vim-options")
 
 -- Setup plugins
-require("lazy").setup("plugins")
+require("lazy").setup("plugins", {
+	rocks = {
+		enabled = false, -- disable luarocks
+		hererocks = false, -- disable hererocks
+	},
+})
 
 -- Setup keymaps
 require("keymaps")
