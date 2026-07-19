@@ -10,6 +10,12 @@ return {
 			capabilities = require("blink.cmp").get_lsp_capabilities(),
 		})
 
+		-- Diagnostics
+		vim.diagnostic.config({
+			virtual_text = true,
+			severity_sort = true,
+		})
+
 		-- Overrides
 		vim.lsp.config("lua_ls", {
 			settings = {
