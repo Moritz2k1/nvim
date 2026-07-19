@@ -22,9 +22,6 @@ vim.g.maplocalleader = "\\"
 -- Import options
 require('config.options')
 
--- Import keymap
-require('config.keymap')
-
 -- Setup lazy.nvim
 require("lazy").setup({
   spec = {
@@ -34,3 +31,6 @@ require("lazy").setup({
   checker = { enabled = true },
   rocks = { enabled = false },
 })
+
+-- Import keymap
+require('config.keymap')
