@@ -19,6 +19,18 @@ return {
       },
     })
 
+  vim.lsp.config('clangd', {
+       filetypes = { 'c', 'cpp', 'objc', 'objcpp', 'cuda' },
+    })
+
+  vim.lsp.config('lemminx', {
+      filetypes = { 'xml', 'xsd', 'xslt', 'svg' },
+    })
+
+    vim.lsp.config('marksman', {
+      filetypes = { 'markdown' },
+    })
+
   local servers = {
       'lua_ls',
       'clangd',
