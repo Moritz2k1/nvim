@@ -28,7 +28,7 @@ return {
       'tsx',
       'xml',
       'json',
-      'sql'
+      'sql',
     }
 
     require('nvim-treesitter').install(parsers)

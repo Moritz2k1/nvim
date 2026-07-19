@@ -39,7 +39,6 @@ return {
       'cssls',
       'ts_ls',
       'marksman',
-      'lemminx',
       'jsonls',
     }
 
