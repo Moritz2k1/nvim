@@ -32,4 +32,5 @@ require("lazy").setup({
   },
   install = { colorscheme = { "rose-pine", "habamax" } },
   checker = { enabled = true },
+  rocks = { enabled = false },
 })
