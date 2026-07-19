@@ -21,7 +21,6 @@ return {
       -- My parsers
       'c',
       'java',
-      'c_sharp',
       'html',
       'css',
       'javascript',
@@ -29,6 +28,7 @@ return {
       'tsx',
       'xml',
       'json',
+      'sql'
     }
 
     require('nvim-treesitter').install(parsers)
