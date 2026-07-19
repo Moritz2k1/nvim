@@ -15,10 +15,10 @@ opt.shiftwidth = 2
 opt.tabstop = 2
 
 -- Enable mouse mode
-opt.mouse = 'a'
+opt.mouse = "a"
 
 -- Let h/l and arrow keys move to the previous/next line at buffer edges
-opt.whichwrap:append('<>[]hl')
+opt.whichwrap:append("<>[]hl")
 
 -- Don't show mode, status line covers it
 opt.showmode = false
@@ -38,13 +38,13 @@ opt.ignorecase = true
 opt.smartcase = true
 
 -- Keep signcolumn on to avoid text shifting
-opt.signcolumn = 'yes'
+opt.signcolumn = "yes"
 
 -- One statusline for whole editor instead of one per split
 opt.laststatus = 3
 
 -- Keep the rest of the screen stable when opening/closing a split
-opt.splitkeep = 'screen'
+opt.splitkeep = "screen"
 
 -- Decrease update time
 opt.updatetime = 250
@@ -57,10 +57,10 @@ opt.splitright = true
 opt.splitbelow = true
 
 -- Hide the ~ shown on empty lines past end of buffer
-opt.fillchars = { eob = ' ' }
+opt.fillchars = { eob = " " }
 
 -- Live preview of :substitute
-opt.inccommand = 'split'
+opt.inccommand = "split"
 
 -- Highlight current line
 opt.cursorline = true
@@ -72,4 +72,6 @@ opt.scrolloff = 10
 opt.termguicolors = true
 
 -- Sync clipboard between OS and Neovim
-vim.schedule(function() opt.clipboard = 'unnamedplus' end)
+vim.schedule(function()
+	opt.clipboard = "unnamedplus"
+end)

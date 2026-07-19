@@ -1,22 +1,22 @@
 -- lua/plugins/alpha.lua
 return {
-  'goolord/alpha-nvim',
-  event = 'VimEnter',
-  dependencies = { 'nvim-mini/mini.icons' },
-  config = function()
-    local dashboard = require('alpha.themes.theta')
+	"goolord/alpha-nvim",
+	event = "VimEnter",
+	dependencies = { "nvim-mini/mini.icons" },
+	config = function()
+		local dashboard = require("alpha.themes.theta")
 
-    dashboard.header.val = {
-      '                                                     ',
-      '  ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗ ',
-      '  ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║ ',
-      '  ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║ ',
-      '  ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║ ',
-      '  ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║ ',
-      '  ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝ ',
-      '                                                     ',
-    }
+		dashboard.header.val = {
+			"                                                     ",
+			"  ███╗   ██╗ ███████╗ ██████╗  ██╗   ██╗ ██╗ ███╗   ███╗ ",
+			"  ████╗  ██║ ██╔════╝██╔═══██╗ ██║   ██║ ██║ ████╗ ████║ ",
+			"  ██╔██╗ ██║ █████╗  ██║   ██║ ██║   ██║ ██║ ██╔████╔██║ ",
+			"  ██║╚██╗██║ ██╔══╝  ██║   ██║ ╚██╗ ██╔╝ ██║ ██║╚██╔╝██║ ",
+			"  ██║ ╚████║ ███████╗╚██████╔╝  ╚████╔╝  ██║ ██║ ╚═╝ ██║ ",
+			"  ╚═╝  ╚═══╝ ╚══════╝ ╚═════╝    ╚═══╝   ╚═╝ ╚═╝     ╚═╝ ",
+			"                                                     ",
+		}
 
-    require('alpha').setup(dashboard.config)
-  end,
+		require("alpha").setup(dashboard.config)
+	end,
 }
