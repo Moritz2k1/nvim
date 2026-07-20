@@ -2,7 +2,11 @@ return {
 	"nvim-tree/nvim-tree.lua",
 	dependencies = { "nvim-tree/nvim-web-devicons" },
 	config = function()
-		require("nvim-tree").setup()
+		require("nvim-tree").setup({
+			view = {
+				adaptive_size = true,
+			},
+		})
 
 		local function open_nvim_tree(data)
 			-- Only auto-open when a file was passed to nvim
