@@ -48,20 +48,11 @@ return {
 		-- LSP-integrated file renaming
 		rename = { enabled = true },
 
-		-- Scope detection
-		scope = { enabled = true },
-
 		-- Smooth scrolling
 		scroll = { enabled = true },
 
 		-- Pretty status column
 		statuscolumn = { enabled = true },
-
-		-- Terminal
-		terminal = { enabled = true, win = { style = "float" } },
-
-		-- Create and manage floating windows or splits
-		win = { enabled = true },
 
 		-- Auto-show LSP references
 		words = { enabled = true },

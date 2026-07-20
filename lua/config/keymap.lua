@@ -13,6 +13,9 @@ map("n", "<C-l>", "<C-w><C-l>", { desc = "Move focus to right window" })
 map("n", "<C-j>", "<C-w><C-j>", { desc = "Move focus to lower window" })
 map("n", "<C-k>", "<C-w><C-k>", { desc = "Move focus to upper window" })
 
+-- ToggleTerm
+map({ "n", "t" }, "<c-/>", "<cmd>ToggleTerm<CR>", { desc = "Toggle Terminal" })
+
 -- Snacks.nvim
 -- Top Pickers & Explorer
 map("n", "<leader><space>", function() Snacks.picker.smart() end, { desc = "Smart Find Files" })
@@ -89,16 +92,11 @@ map("n", "<leader>ss", function() Snacks.picker.lsp_symbols() end, { desc = "LSP
 map("n", "<leader>sS", function() Snacks.picker.lsp_workspace_symbols() end, { desc = "LSP Workspace Symbols" })
 
 -- Other
-map("n", "<leader>z", function() Snacks.zen() end, { desc = "Toggle Zen Mode" })
-map("n", "<leader>Z", function() Snacks.zen.zoom() end, { desc = "Toggle Zoom" })
-map("n", "<leader>.", function() Snacks.scratch() end, { desc = "Toggle Scratch Buffer" })
-map("n", "<leader>S", function() Snacks.scratch.select() end, { desc = "Select Scratch Buffer" })
 map("n", "<leader>n", function() Snacks.notifier.show_history() end, { desc = "Notification History" })
 map("n", "<leader>bd", function() Snacks.bufdelete() end, { desc = "Delete Buffer" })
 map("n", "<leader>cR", function() Snacks.rename.rename_file() end, { desc = "Rename File" })
 map({ "n", "v" }, "<leader>gB", function() Snacks.gitbrowse() end, { desc = "Git Browse" })
 map("n", "<leader>gg", function() Snacks.lazygit() end, { desc = "Lazygit" })
 map("n", "<leader>un", function() Snacks.notifier.hide() end, { desc = "Dismiss All Notifications" })
-map({ "n", "t" }, "<c-/>", function() Snacks.terminal() end, { desc = "Toggle Terminal" })
 map({ "n", "t" }, "]]", function() Snacks.words.jump(vim.v.count1) end, { desc = "Next Reference" })
 map({ "n", "t" }, "[[", function() Snacks.words.jump(-vim.v.count1) end, { desc = "Prev Reference" })
