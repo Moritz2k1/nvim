@@ -16,6 +16,7 @@ return {
 			"query",
 			"vim",
 			"vimdoc",
+			"regex",
 
 			-- My parsers
 			"c",
