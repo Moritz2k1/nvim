@@ -10,7 +10,7 @@ return {
 		bufdelete = { enabled = true },
 
 		-- Dashboard
-		dashboard = { enabled = true },
+		dashboard = { example = "doom" },
 
 		-- File explorer
 		explorer = { enabled = true },
@@ -23,9 +23,6 @@ return {
 
 		-- Open current file, branch, etc. in browser
 		gitbrowse = { enabled = true },
-
-		-- Image viewer
-		image = { enabled = true },
 
 		-- Indent guides and scopes
 		indent = { enabled = true },
@@ -63,9 +60,6 @@ return {
 		-- Terminal
 		terminal = { enabled = true },
 
-		-- Utility functions / Helpers
-		util = { enabled = true },
-
 		-- Create and manage floating windows or splits
 		win = { enabled = true },
 
@@ -75,4 +69,14 @@ return {
 		-- Zen mode
 		zen = { enabled = true },
 	},
+
+	config = function(_, opts)
+		require("snacks").setup(opts)
+
+		-- Exclude Snacks.image from checkhealth
+		require("snacks.image").meta.health = false
+
+		-- Exclude Snacks.toggle from checkhealth
+		require("snacks.toggle").meta.health = false
+	end,
 }
