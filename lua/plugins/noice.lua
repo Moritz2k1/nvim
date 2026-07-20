@@ -3,7 +3,7 @@ return {
 	event = "VeryLazy",
 	dependencies = {
 		"MunifTanjim/nui.nvim",
-		"rcarriga/nvim-notify",
+		"folke/snacks.nvim",
 	},
 	opts = {
 		lsp = {
@@ -11,6 +11,11 @@ return {
 				["vim.lsp.util.convert_input_to_markdown_lines"] = true,
 				["vim.lsp.util.stylize_markdown"] = true,
 			},
+			-- Silence LSP progress
+			progress = { enabled = false },
+
+			-- Silence LSP window/showMessage popups
+			message = { enabled = false },
 		},
 		presets = {
 			long_message_to_split = true,

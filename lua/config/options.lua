@@ -11,8 +11,8 @@ opt.relativenumber = true
 
 -- Spaces instead of tabs
 opt.expandtab = true
-opt.shiftwidth = 2
-opt.tabstop = 2
+opt.shiftwidth = 4
+opt.tabstop = 4
 
 -- Enable mouse mode
 opt.mouse = "a"

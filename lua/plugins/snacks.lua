@@ -33,7 +33,7 @@ return {
 		-- Lazygit integration
 		lazygit = { enabled = true },
 
-		-- Notifier
+		-- Pretty vim.notify popups
 		notifier = { enabled = true },
 
 		-- Notify
@@ -65,9 +65,6 @@ return {
 
 		-- Auto-show LSP references
 		words = { enabled = true },
-
-		-- Zen mode
-		zen = { enabled = true },
 	},
 
 	config = function(_, opts)
