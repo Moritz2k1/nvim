@@ -72,6 +72,4 @@ opt.scrolloff = 10
 opt.termguicolors = true
 
 -- Sync clipboard between OS and Neovim
-vim.schedule(function()
-	opt.clipboard = "unnamedplus"
-end)
+vim.schedule(function() opt.clipboard = "unnamedplus" end)

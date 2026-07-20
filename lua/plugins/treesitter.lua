@@ -60,9 +60,7 @@ return {
 				if vim.tbl_contains(installed_parsers, language) then
 					try_attach(buf, language)
 				elseif vim.tbl_contains(available_parsers, language) then
-					require("nvim-treesitter").install(language):await(function()
-						try_attach(buf, language)
-					end)
+					require("nvim-treesitter").install(language):await(function() try_attach(buf, language) end)
 				else
 					try_attach(buf, language)
 				end
