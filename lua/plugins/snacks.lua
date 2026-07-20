@@ -58,7 +58,7 @@ return {
 		statuscolumn = { enabled = true },
 
 		-- Terminal
-		terminal = { enabled = true },
+		terminal = { enabled = true, win = { style = "float" } },
 
 		-- Create and manage floating windows or splits
 		win = { enabled = true },
