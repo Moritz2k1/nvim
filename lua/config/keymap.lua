@@ -76,7 +76,6 @@ map("n", "<leader>sp", function() Snacks.picker.lazy() end, { desc = "Search for
 map("n", "<leader>sq", function() Snacks.picker.qflist() end, { desc = "Quickfix List" })
 map("n", "<leader>sR", function() Snacks.picker.resume() end, { desc = "Resume" })
 map("n", "<leader>su", function() Snacks.picker.undo() end, { desc = "Undo History" })
-map("n", "<leader>uC", function() Snacks.picker.colorschemes() end, { desc = "Colorschemes" })
 
 -- LSP
 map("n", "gd", function() Snacks.picker.lsp_definitions() end, { desc = "Goto Definition" })
