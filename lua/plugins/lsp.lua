@@ -40,7 +40,6 @@ return {
 		local servers = {
 			"lua_ls",
 			"clangd",
-			"jdtls",
 			"html",
 			"cssls",
 			"ts_ls",
