@@ -33,9 +33,6 @@ return {
 		-- Better vim.ui.input
 		input = { enabled = true },
 
-		-- Better vim.keymap
-		keymap = { enabled = true },
-
 		-- Lazygit integration
 		lazygit = { enabled = true },
 
@@ -44,6 +41,9 @@ return {
 
 		-- Notify
 		notify = { enabled = true },
+
+		-- Picker
+		picker = { enabled = true },
 
 		-- Load file before plugins
 		quickfile = { enabled = true },
@@ -62,9 +62,6 @@ return {
 
 		-- Terminal
 		terminal = { enabled = true },
-
-		-- Toggle keymaps
-		toggle = { enabled = true },
 
 		-- Utility functions / Helpers
 		util = { enabled = true },

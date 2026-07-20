@@ -17,6 +17,7 @@ return {
 			"vim",
 			"vimdoc",
 			"regex",
+			"typst",
 
 			-- My parsers
 			"c",
@@ -29,6 +30,10 @@ return {
 			"xml",
 			"json",
 			"sql",
+			"latex",
+			"scss",
+			"svelte",
+			"vue",
 		}
 
 		require("nvim-treesitter").install(parsers)
