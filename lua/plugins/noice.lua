@@ -12,5 +12,8 @@ return {
 				["vim.lsp.util.stylize_markdown"] = true,
 			},
 		},
+		presets = {
+			long_message_to_split = true,
+		},
 	},
 }
