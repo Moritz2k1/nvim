@@ -52,7 +52,6 @@ return {
 			"clangd",
 			"html",
 			"cssls",
-			"ts_ls",
 			"marksman",
 			"jsonls",
 		}
