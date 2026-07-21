@@ -1,6 +1,6 @@
 # nvim
 
-Personal Neovim config built on [lazy.nvim](https://github.com/folke/lazy.nvim).
+Personal Neovim config built on [lazy.nvim](https://github.com/folke/lazy.nvim)
 
 ## Structure
 
