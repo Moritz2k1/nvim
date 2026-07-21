@@ -28,6 +28,7 @@ return {
 			"tsx",
 			"xml",
 			"json",
+			"yaml",
 			"sql",
 			"latex",
 		}

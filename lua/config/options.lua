@@ -40,6 +40,9 @@ opt.smartcase = true
 -- Keep signcolumn on to avoid text shifting
 opt.signcolumn = "yes"
 
+-- Statuscolumn
+opt.statuscolumn = ""
+
 -- One statusline for whole editor instead of one per split
 opt.laststatus = 3
 
