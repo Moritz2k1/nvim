@@ -66,5 +66,8 @@ return {
 
 		-- Exclude Snacks.toggle from checkhealth
 		require("snacks.toggle").meta.health = false
+
+		-- Exclude Snacks.scope from checkhealth
+		require("snacks.scope").meta.health = false
 	end,
 }
