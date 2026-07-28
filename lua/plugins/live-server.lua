@@ -5,7 +5,7 @@ return {
 	init = function()
 		vim.g.live_server = {
 			port = 8080,
-			browser = false,
+			browser = true,
 		}
 	end,
 }
