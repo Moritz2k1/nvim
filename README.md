@@ -20,7 +20,6 @@ lua/plugins/
 | ------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------- |
 | [snacks.nvim](https://github.com/folke/snacks.nvim)                      | Collection of plugins: Picker/fuzzy finder, file explorer, dashboard, git integration, notifications... |
 | [nvim-lspconfig](https://github.com/neovim/nvim-lspconfig)               | LSP client configuration                                                                                |
-| [typescript-tools.nvim](https://github.com/pmizio/typescript-tools.nvim) | TypeScript/JavaScript LSP                                                                               |
 | [blink.cmp](https://github.com/saghen/blink.cmp)                         | Code Completions                                                                                        |
 | [lazydev.nvim](https://github.com/folke/lazydev.nvim)                    | Lua LSP support for the Neovim API                                                                      |
 | [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)    | Syntax highlighting, indentation                                                                        |
@@ -41,7 +40,7 @@ lua/plugins/
 Install via Homebrew:
 
 ```zsh
-brew install ripgrep fd lazygit gh lua-language-server vscode-langservers-extracted marksman stylua clang-format prettier eslint gradle maven tree-sitter-cli
+brew install ripgrep fd lazygit gh lua-language-server vscode-langservers-extracted marksman stylua clang-format prettier eslint gradle maven tree-sitter-cli vtsls vue-language-server
 ```
 
 | Package                      | Used for                               |
@@ -58,6 +57,20 @@ brew install ripgrep fd lazygit gh lua-language-server vscode-langservers-extrac
 | eslint                       | JS/TS linter                           |
 | gradle, maven                | Java project/build support             |
 | tree-sitter-cli              | Compiling treesitter parsers           |
+| vtsls                        | TypeScript LSP (TS6) for Vue projects  |
+| vue-language-server          | Vue LSP                                |
+
+Install via npm:
+
+```zsh
+npm install -g typescript@6 @vue/typescript-plugin @typescript/native-preview
+```
+
+| Package                    | Used for                                    |
+| -------------------------- | ------------------------------------------- |
+| typescript@6               | TS6 compiler, resolved by vtsls             |
+| @vue/typescript-plugin     | Feeds Vue SFC types into vtsls              |
+| @typescript/native-preview | `tsgo`, TS7 native LSP for non-Vue projects |
 
 ## Install
 
