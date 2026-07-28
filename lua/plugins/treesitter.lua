@@ -25,6 +25,7 @@ return {
 			"css",
 			"javascript",
 			"typescript",
+			"vue",
 			"tsx",
 			"xml",
 			"json",

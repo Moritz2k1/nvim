@@ -54,6 +54,7 @@ return {
 			"cssls",
 			"marksman",
 			"jsonls",
+			"vue_ls",
 		}
 
 		vim.lsp.enable(servers)
