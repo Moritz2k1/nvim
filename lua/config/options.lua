@@ -76,3 +76,13 @@ opt.termguicolors = true
 
 -- Sync clipboard between OS and Neovim
 vim.schedule(function() opt.clipboard = "unnamedplus" end)
+
+-- Matches prettier 2-space indent for web stuff
+vim.api.nvim_create_autocmd("FileType", {
+	pattern = { "html", "css", "javascript", "typescript", "vue" },
+	callback = function()
+		vim.bo.shiftwidth = 2
+		vim.bo.tabstop = 2
+		vim.bo.softtabstop = 2
+	end,
+})
